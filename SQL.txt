@@ -1,0 +1,24 @@
+1.
+select id, date, year(date) as year, month(date) as month, day(date) as day
+from orders;
+
+
+2.
+select id, date, date + interval 1 day as "date + 1 day"
+from orders;
+
+
+3. Чергова задача-ребус де важливіше здогадатися що ж мав на увазі автор, а не зробити щось, що має практичну корсить
+select id, date, unix_timestamp(date) as timestamp
+from orders;
+
+
+4.
+select count(*) as "number of orders"
+from orders
+where date between '1996-07-10 00:00:00' and '1996-10-08 00:00:00';
+
+
+5.
+select id, date, json_object('id', id, 'date', date) as json
+from orders;
